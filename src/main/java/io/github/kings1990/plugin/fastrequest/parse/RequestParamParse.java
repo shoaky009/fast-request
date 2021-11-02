@@ -78,12 +78,7 @@ public class RequestParamParse extends AbstractParamParse {
             if (dataMapping != null) {
                 Object value = dataMapping.getValue();
                 String calcType = TypeUtil.calcType(type);
-                if (arrayFlag || listFlag) {
-                    ParamKeyValue paramKeyValue = new ParamKeyValue(name + "[]", value, 2, calcType);
-                    nameValueMap.put(name, paramKeyValue);
-                } else {
-                    nameValueMap.put(name, new ParamKeyValue(name, value, 2, calcType));
-                }
+                nameValueMap.put(name, new ParamKeyValue(name, value, 2, calcType));
                 continue;
             }
             //特殊参数处理
